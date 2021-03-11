@@ -3,13 +3,13 @@ let songs = ['Alive', 'Dead', 'Blackbird', 'Friday', 'On the Rocks'];
 let paragraph;
 //let container = document.getElementById('container');
 //let container = document.querySelector('#container');
-for (let i = 0; i < songs.length; i++) {
-  paragraph = document.createElement('p');
-  paragraph.setAttribute('id', `song${i + 1}`);
-  paragraph.innerText = songs[i];
-  //container.appendChild(paragraph);
-  document.querySelector('#container').appendChild(paragraph);
-}
+// for (let i = 0; i < songs.length; i++) {
+//   paragraph = document.createElement('p');
+//   paragraph.setAttribute('id', `song${i + 1}`);
+//   paragraph.innerText = songs[i];
+//   //container.appendChild(paragraph);
+//   document.querySelector('#container').appendChild(paragraph);
+// }
 
 songs.forEach((s) => {
   paragraph = document.createElement('p');
@@ -26,4 +26,15 @@ for (let i = 0; i < songs.length; i++) {
   li.setAttribute('id', `song${i + 1}`);
   li.innerText = songs[i];
   //container.appendChild(paragraph);
-  document.querySelector('#container').appendChild(li);
+  ul.appendChild(li);
+}
+
+songs.forEach((s) => {
+  li = document.createElement('li');
+  li.setAttribute('id', `song${songs.indexOf(s) + 1}`);
+  li.innerText = s;
+  //container.appendChild(paragraph);
+  ul.appendChild(li);
+});
+
+document.querySelector('#container').appendChild(ul);
